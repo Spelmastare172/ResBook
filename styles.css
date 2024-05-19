@@ -30,21 +30,19 @@ header {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    overflow-y: auto; /* Add this line for scrollable content */
 }
 
 .modal-content {
     background-color: #fff;
     padding: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 5% auto; /* Center modal vertically with some margin */
     border-radius: 5px;
-    width: 80%;
-    max-width: 500px; /* Default size for larger screens */
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box; /* Include padding and border in width and height */
 }
 
-/* Close button */
 .close {
     position: absolute;
     top: 0;
@@ -61,8 +59,22 @@ header {
     }
 
     .modal-content {
-        width: 90%; /* Adjust modal width for smaller screens */
+        width: 95%;
         max-width: none; /* Remove max-width restriction */
+        margin: 10% auto; /* Increase vertical margin for smaller screens */
+    }
+
+    .modal-content form label,
+    .modal-content form input,
+    .modal-content form textarea,
+    .modal-content form button {
+        width: 100%;
+        margin-bottom: 1rem; /* Ensure elements take full width and have spacing */
+        box-sizing: border-box; /* Include padding and border in width and height */
+    }
+
+    .modal-content form textarea {
+        height: auto; /* Adjust height to content */
     }
 }
 
