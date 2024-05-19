@@ -20,20 +20,6 @@ header {
     background-color: #fff;
 }
 
-/* Add more styles as needed */
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .recipe-card {
-        margin: 0.5rem;
-        padding: 0.5rem;
-    }
-
-    .modal-content {
-        max-width: 90%; /* Adjust as needed */
-    }
-}
-
 /* Modal styles */
 .modal {
     display: none;
@@ -54,14 +40,30 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
+    width: 80%;
+    max-width: 500px; /* Default size for larger screens */
 }
 
+/* Close button */
 .close {
     position: absolute;
     top: 0;
     right: 0;
     padding: 0.5rem;
     cursor: pointer;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .recipe-card {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        width: 90%; /* Adjust modal width for smaller screens */
+        max-width: none; /* Remove max-width restriction */
+    }
 }
 
 /* For larger screens */
