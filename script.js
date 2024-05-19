@@ -6,8 +6,13 @@ const recipeForm = document.getElementById('recipe-form');
 const instructionsSection = document.getElementById('cooking-instructions');
 const mainContent = document.querySelector('main');
 
-// Initialize an empty array to store recipes
-const recipes = [];
+// Retrieve recipes from local storage or initialize an empty array
+const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+
+// Function to save recipes to local storage
+function saveRecipes() {
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+}
 
 // Function to render recipes
 function renderRecipes() {
@@ -35,10 +40,12 @@ function renderRecipes() {
             modal.style.display = 'flex';
 
             recipes.splice(index, 1); // Remove the old recipe
+            saveRecipes(); // Save the updated recipes
         });
 
         recipeCard.querySelector('.delete-recipe').addEventListener('click', () => {
             recipes.splice(index, 1); // Remove the recipe from the array
+            saveRecipes(); // Save the updated recipes
             renderRecipes(); // Re-render the recipes
         });
 
@@ -76,6 +83,9 @@ recipeForm.addEventListener('submit', (e) => {
 
     // Add the new recipe to the array
     recipes.push(newRecipe);
+
+    // Save the recipes to local storage
+    saveRecipes();
 
     // Re-render the recipes
     renderRecipes();
