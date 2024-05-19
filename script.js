@@ -101,4 +101,3 @@ recipeForm.addEventListener('submit', (e) => {
 
 // Initial rendering of recipes (if any)
 renderRecipes();
-s
