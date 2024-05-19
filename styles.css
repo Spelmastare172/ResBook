@@ -30,24 +30,27 @@ header {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    overflow-y: auto; /* Add this line for scrollable content */
+    overflow-y: auto; /* Make content scrollable if it exceeds the viewport height */
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .modal-content {
     background-color: #fff;
     padding: 1rem;
-    margin: 5% auto; /* Center modal vertically with some margin */
     border-radius: 5px;
     width: 90%;
-    max-width: 500px;
+    max-width: 500px; /* Default max width for larger screens */
     box-sizing: border-box; /* Include padding and border in width and height */
+    margin: auto;
 }
 
 .close {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.5rem;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -59,9 +62,8 @@ header {
     }
 
     .modal-content {
-        width: 95%;
-        max-width: none; /* Remove max-width restriction */
-        margin: 10% auto; /* Increase vertical margin for smaller screens */
+        width: 95%; /* Adjust modal width for smaller screens */
+        max-width: none; /* Remove max-width restriction for smaller screens */
     }
 
     .modal-content form label,
