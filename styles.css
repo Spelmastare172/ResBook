@@ -31,9 +31,9 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     overflow-y: auto; /* Make content scrollable if it exceeds the viewport height */
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
 }
 
 .modal-content {
@@ -54,6 +54,21 @@ header {
     cursor: pointer;
 }
 
+/* Ensure form elements are stacked vertically */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label,
+.modal-content form input,
+.modal-content form textarea,
+.modal-content form button {
+    width: 100%;
+    margin-bottom: 1rem; /* Ensure elements take full width and have spacing */
+    box-sizing: border-box; /* Include padding and border in width and height */
+}
+
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
     .recipe-card {
@@ -64,15 +79,6 @@ header {
     .modal-content {
         width: 95%; /* Adjust modal width for smaller screens */
         max-width: none; /* Remove max-width restriction for smaller screens */
-    }
-
-    .modal-content form label,
-    .modal-content form input,
-    .modal-content form textarea,
-    .modal-content form button {
-        width: 100%;
-        margin-bottom: 1rem; /* Ensure elements take full width and have spacing */
-        box-sizing: border-box; /* Include padding and border in width and height */
     }
 
     .modal-content form textarea {
