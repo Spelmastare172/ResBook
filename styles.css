@@ -41,7 +41,7 @@ header {
     padding: 1.5rem;
     border-radius: 5px;
     width: 90%;
-    max-width: 500px; /* Default max width for larger screens */
+    max-width: 800px; /* Adjust max-width for larger screens */
     box-sizing: border-box; /* Include padding and border in width and height */
     margin: auto;
     position: relative;
